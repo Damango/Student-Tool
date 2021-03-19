@@ -1,24 +1,57 @@
-import logo from './logo.svg';
+
+import axios from "axios"
+import { useState } from 'react'
 import './App.css';
 
 function App() {
+
+  const [studentInfo, setStudentInfo] = useState()
+  const [account, setAccounts] = useState()
+
+  function testFetch() {
+
+
+
+    axios.get('http://127.0.0.1:5000/api').then((res) => {
+      setStudentInfo(res.data)
+      console.log(res)
+    })
+
+  }
+
+
+  function fetchMe() {
+    axios.get('http://127.0.0.1:5000/students/justin/229').then((res) => {
+      //setStudentInfo(res.data)
+      console.log(res)
+    })
+  }
+
+  function renderStudentInfo() {
+    if (studentInfo != null) {
+      return (<div className="student-container">{studentInfo.name}</div>)
+    }
+  }
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+
+
+
+
+
+
+
+      <div><h1>SERVER TESTING</h1><button onClick={() => {
+        axios.get("http://127.0.0.1:5000/students/120").then((res) => { console.log(res) })
+      }}>DATABASE</button></div>
+    </div >
   );
 }
 
