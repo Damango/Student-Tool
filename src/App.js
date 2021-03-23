@@ -1,6 +1,7 @@
 
 import axios from "axios"
 import { useState } from 'react'
+import StudentTool from "./Components/StudentTool/StudentTool"
 import './App.css';
 
 function App() {
@@ -40,17 +41,8 @@ function App() {
   return (
     <div className="App">
 
+      <StudentTool />
 
-
-
-
-
-
-
-
-      <div><h1>SERVER TESTING</h1><button onClick={() => {
-        axios.get("http://127.0.0.1:5000/students/120").then((res) => { console.log(res) })
-      }}>DATABASE</button></div>
     </div >
   );
 }

@@ -1,0 +1,70 @@
+.student-tool-container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.side-bar-container{
+    position: relative;
+    float: left;
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+}
+
+.side-bar-inner-container{
+    position: relative;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 95%;
+}
+
+.nav-container{
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: Roboto;
+    height: 50%;
+}
+
+.main-view-container{
+    position: relative;
+    float: right;
+    width: 85%;
+    height: 100%;
+    background-color: rgb(224, 224, 224);
+}
+
+.header-date{
+    position: relative;
+    background-color: white;
+    padding: 15px;
+}
+
+.main-view-inner-container{
+    
+    position: relative;
+    left: 50%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.module-container{
+    background-color: white;
+    width: 650px;
+    height: 350px;
+    margin-right: 50px;
+    
+}
