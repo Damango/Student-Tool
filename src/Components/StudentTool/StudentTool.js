@@ -8,17 +8,20 @@ import "./StudentTool.css"
 const StudentTool = (props) => {
 
     const [recentCourses, setRecentCourses] = useState([])
+    const [studentLevel, setStudentLevel] = useState(0)
 
 
 
     useEffect(() => {
 
         let testInfo;
+        let theLevel
 
         axios.get('http://127.0.0.1:5000/students/6057e06854631d274c4f7ac4').then((res) => {
             //setStudentInfo(res.data)
-            console.log(res.data.courses)
+            console.log(res.data)
             testInfo = res.data.courses;
+            theLevel = res.data.level
 
 
 
@@ -28,7 +31,7 @@ const StudentTool = (props) => {
         setTimeout(() => {
 
             setRecentCourses(testInfo)
-
+            setStudentLevel(theLevel)
             //alert(testInfo)
         }, 100)
 
@@ -78,7 +81,7 @@ const StudentTool = (props) => {
                     <RecentCourses courses={recentCourses} />
                 </div>
                 <div className="module-container">
-                    <BadgeCard />
+                    <BadgeCard level={studentLevel} />
                 </div>
                 <div className="module-container">
                     <SuggestedCourses />
