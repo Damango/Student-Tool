@@ -98,7 +98,7 @@ const StudentTool = (props) => {
                 <div className="nav-container">
                     <div className="nav-link" onClick={() => {changeViewState(0)}}>Dashboard</div>
                     <div className="nav-link" onClick={() => {changeViewState(1);}}>Courses</div>
-                    <div className="nav-link">Practice Problems</div>
+                    <div className="nav-link" onClick={() => {changeViewState(2)}}>Practice Problems</div>
                     <div className="nav-link">Articles</div>
                     <div className="nav-link">Discussions</div>
                 </div>
