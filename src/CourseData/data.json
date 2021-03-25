@@ -1,0 +1,28 @@
+{
+            "math":[
+                {
+                    "sectionTitle": "Caluclus I",
+                    "sections": [
+                        {
+                        "sectionHeader": "1.0 Introduction to Calculus",
+                        "textSections": [{
+                            "text" : "In this section, we provide a formal definition of a function and examine several ways in which functions are represented—namely, through tables, formulas, and graphs. We study formal notation and terms related to functions. We also define composition of functions and symmetry properties. Most of this material will be a review for you, but it serves as a handy reference to remind you of some of the algebraic techniques useful for working with functions.",
+                            "image": ""
+                        },
+                        {
+                            "text" : "In this section, we provide a formal definition of a function and examine several ways in which functions are represented—namely, through tables, formulas, and graphs. We study formal notation and terms related to functions. We also define composition of functions and symmetry properties. Most of this material will be a review for you, but it serves as a handy reference to remind you of some of the algebraic techniques useful for working with functions.",
+                            "image": ""
+                        }]
+                    
+                        }
+                    ],
+                    "difficulty": "Intermidate"
+    
+                }
+            ],
+            "computerScience":[]
+            
+        
+    
+   
+}

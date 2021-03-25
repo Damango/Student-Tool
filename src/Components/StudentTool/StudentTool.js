@@ -4,8 +4,12 @@ import BadgeCard from "../BadgeCard/BadgeCard"
 import RecentCourses from "../RecentCourses/RecentCourses"
 import SuggestedCourses from "../SuggestedCourses/SuggestedCourses"
 import PracticeBoard from "../PracticeBoard/PracticeBoard"
+import Courses from "../Courses/Courses"
 import "./StudentTool.css"
 const StudentTool = (props) => {
+
+
+    const [viewState, setViewState] = useState(0)
 
     const [recentCourses, setRecentCourses] = useState([])
     const [studentLevel, setStudentLevel] = useState(0)
@@ -14,24 +18,28 @@ const StudentTool = (props) => {
 
     useEffect(() => {
 
+        
+        
+
         let testInfo;
         let theLevel
 
-        axios.get('http://127.0.0.1:5000/students/6057e06854631d274c4f7ac4').then((res) => {
-            //setStudentInfo(res.data)
+        axios.get('http://127.0.0.1:5000/students/605c7f3d2c93243eb49f268e').then((res) => {
+          
             console.log(res.data)
             testInfo = res.data.courses;
             theLevel = res.data.level
-
+           
 
 
         })
 
 
         setTimeout(() => {
-
+            
             setRecentCourses(testInfo)
             setStudentLevel(theLevel)
+            
             //alert(testInfo)
         }, 100)
 
@@ -48,11 +56,38 @@ const StudentTool = (props) => {
 
 
 
+    function changeViewState(stateView){
+        setViewState(stateView)
+    }
+
+
+    function renderCourses(){
+
+        if(viewState === 0){
+            return(<div className="main-view-inner-container">
+            <div className="module-container">
+              <RecentCourses courses={recentCourses}/>
+            </div>
+            <div className="module-container">
+                <BadgeCard level={studentLevel} />
+            </div>
+            <div className="module-container">
+                <SuggestedCourses />
+            </div>
+            <div className="module-container">
+                <PracticeBoard />
+            </div>
+        </div>)
+        }
+        
+        else if(viewState === 1){
+            return(<Courses />)
+        }
+    }
 
 
 
     return (<div className="student-tool-container">
-
 
 
 
@@ -62,7 +97,7 @@ const StudentTool = (props) => {
                 <div className="logo-container">LOGO</div>
                 <div className="nav-container">
                     <div className="nav-link">Dashboard</div>
-                    <div className="nav-link">Courses</div>
+                    <div className="nav-link" onClick={() => {changeViewState(1);}}>Courses</div>
                     <div className="nav-link">Practice Problems</div>
                     <div className="nav-link">Articles</div>
                     <div className="nav-link">Discussions</div>
@@ -76,20 +111,7 @@ const StudentTool = (props) => {
                 <div className="header-profile"></div>
             </div>
 
-            <div className="main-view-inner-container">
-                <div className="module-container">
-                    <RecentCourses courses={recentCourses} />
-                </div>
-                <div className="module-container">
-                    <BadgeCard level={studentLevel} />
-                </div>
-                <div className="module-container">
-                    <SuggestedCourses />
-                </div>
-                <div className="module-container">
-                    <PracticeBoard />
-                </div>
-            </div>
+            {renderCourses()}
         </div>
 
     </div >);
