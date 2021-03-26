@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Courses.css";
 import data from "../../CourseData/data.json"
 const Courses = (props) => {
 
@@ -20,7 +21,33 @@ const Courses = (props) => {
     console.log(data.courses)
     return ( <div className="courses-container">
 
-        {data.math.map((data) => <div className="course-list">{data.sectionTitle}</div>)}
+        <div className="math-category course-column">
+            <div className="category-header math">Mathematics</div>
+            <div className="course-list">{data.math.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+        </div>
+
+        <div className="computer-science-category course-column">
+            <div className="category-header math">Computer Science</div>
+            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+        </div>
+
+        <div className="computer-science-category course-column">
+            <div className="category-header math">Biology</div>
+            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+        </div>
+
+        <div className="computer-science-category course-column">
+            <div className="category-header math">Chemistry</div>
+            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+        </div>
+
+        
+        <div className="computer-science-category course-column">
+            <div className="category-header math">Chemistry</div>
+            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+        </div>
+
+        
     </div> );
 }
  
