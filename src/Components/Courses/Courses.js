@@ -1,50 +1,36 @@
 import React from 'react';
 import "./Courses.css";
 import data from "../../CourseData/data.json"
+import Course from "./Course/Course"
 const Courses = (props) => {
 
 
-
-    //Courses will displayed in sections like math, science, computer science, biology
-    // Should probably arange based on difficulty of the course or how popular
-    // Different areas of the courses list will show different courses like 'popular' or 'new'
-    
-    
-    /*
-    
-    {
-        "math":[]
-    }
-    
-    
-    */ 
-    console.log(data.courses)
     return ( <div className="courses-container">
 
         <div className="math-category course-column">
             <div className="category-header math">Mathematics</div>
-            <div className="course-list">{data.math.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+            <div className="course-list">{data.math.map((data) =>  <Course openCourseView={props.openCourseView} data={data} color={"#ff4757"}/> )}</div>
         </div>
 
         <div className="computer-science-category course-column">
-            <div className="category-header math">Computer Science</div>
-            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+            <div className="category-header computer-science">Computer Science</div>
+            <div className="course-list">{data.computerScience.map((data) => <Course openCourseView={props.openCourseView} data={data} color={"#3742fa"}/>)}</div>
         </div>
 
         <div className="computer-science-category course-column">
-            <div className="category-header math">Biology</div>
-            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+            <div className="category-header biology">Biology</div>
+            <div className="course-list">{data.computerScience.map((data) => <Course openCourseView={props.openCourseView} data={data} color={"#1abc9c"}/>)}</div>
         </div>
 
         <div className="computer-science-category course-column">
-            <div className="category-header math">Chemistry</div>
-            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+            <div className="category-header chemistry">Chemistry</div>
+            <div className="course-list">{data.computerScience.map((data) => <Course openCourseView={props.openCourseView} data={data} color={"#2ed573"}/>)}</div>
         </div>
 
         
         <div className="computer-science-category course-column">
-            <div className="category-header math">Chemistry</div>
-            <div className="course-list">{data.computerScience.map((data) => <div className="course">{data.sectionTitle}</div>)}</div>
+            <div className="category-header engineering">Engineering</div>
+            <div className="course-list">{data.computerScience.map((data) => <Course openCourseView={props.openCourseView} data={data} color={"#e67e22"}/>)}</div>
         </div>
 
         

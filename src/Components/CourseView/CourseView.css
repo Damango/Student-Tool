@@ -1,0 +1,23 @@
+.course-view-container {
+  position: relative;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+
+  min-height: 200px;
+  max-height: 80%;
+  width: 90%;
+}
+
+.section-header {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.section-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Open Sans";
+  font-size: 18px;
+}

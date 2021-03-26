@@ -5,56 +5,44 @@ import RecentCourses from "../RecentCourses/RecentCourses"
 import SuggestedCourses from "../SuggestedCourses/SuggestedCourses"
 import PracticeBoard from "../PracticeBoard/PracticeBoard"
 import Courses from "../Courses/Courses"
+import CourseView from "../CourseView/CourseView"
 import "./StudentTool.css"
 const StudentTool = (props) => {
 
 
     const [viewState, setViewState] = useState(0)
-
     const [recentCourses, setRecentCourses] = useState([])
     const [studentLevel, setStudentLevel] = useState(0)
+    const [courseData, setCourseData] = useState()
 
 
 
     useEffect(() => {
-
-        
-        
-
         let testInfo;
         let theLevel
-
         axios.get('http://127.0.0.1:5000/students/605c7f3d2c93243eb49f268e').then((res) => {
           
             console.log(res.data)
             testInfo = res.data.courses;
             theLevel = res.data.level
-           
-
-
         })
-
 
         setTimeout(() => {
             
             setRecentCourses(testInfo)
             setStudentLevel(theLevel)
-            
-            //alert(testInfo)
         }, 100)
-
-
-        //alert(recentCourses)
-
-
-
-
 
     }, [])
 
 
 
+    function openCourseView(data){
 
+        setCourseData(data)
+        setViewState(5)
+
+    }
 
     function changeViewState(stateView){
         setViewState(stateView)
@@ -81,7 +69,19 @@ const StudentTool = (props) => {
         }
         
         else if(viewState === 1){
-            return(<Courses />)
+            return(<Courses openCourseView={openCourseView}/>)
+        }
+
+
+
+
+
+
+
+
+
+        else if(viewState === 5){
+            return(<CourseView data={courseData}/>)
         }
     }
 
@@ -97,7 +97,7 @@ const StudentTool = (props) => {
                 <div className="logo-container">LOGO</div>
                 <div className="nav-container">
                     <div className="nav-link" onClick={() => {changeViewState(0)}}>Dashboard</div>
-                    <div className="nav-link" onClick={() => {changeViewState(1);}}>Courses</div>
+                    <div className="nav-link" onClick={() => {changeViewState(1)}}>Courses</div>
                     <div className="nav-link" onClick={() => {changeViewState(2)}}>Practice Problems</div>
                     <div className="nav-link">Articles</div>
                     <div className="nav-link">Discussions</div>

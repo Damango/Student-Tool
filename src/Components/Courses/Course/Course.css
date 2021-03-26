@@ -1,0 +1,35 @@
+.course {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px;
+  color: #2f3640;
+}
+
+.course:hover {
+  cursor: pointer;
+}
+.course:hover .hover-icon {
+  width: 25px;
+  border-radius: 5px;
+}
+
+.course-title {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.hover-icon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  transition: 0.2s;
+}

@@ -17,10 +17,33 @@
   margin-bottom: 30px;
 }
 
-.course {
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.category-header {
+  padding: 10px 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Roboto;
+  border-radius: 3px;
+}
+
+.math {
+  background-color: #ff4757;
+}
+
+.computer-science {
+  background-color: #3742fa;
+}
+
+.biology {
+  background-color: #1abc9c;
+}
+
+.chemistry {
+  background-color: #2ed573;
+}
+
+.engineering {
+  background-color: #e67e22;
 }
 
 .course-list {
