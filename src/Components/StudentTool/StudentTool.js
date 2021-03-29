@@ -39,9 +39,10 @@ const StudentTool = (props) => {
 
 
 
-    function openCourseView(data){
+    function openCourseView(sectionBlock, entireSection){
 
-        setCourseData(data)
+        setCourseData(sectionBlock)
+        setNavBarData(entireSection)
         setViewState(5)
 
     }
@@ -94,7 +95,7 @@ const StudentTool = (props) => {
 
     return (<div className="student-tool-container">
 
-            <NavBar changeViewState={changeViewState}/>
+            <NavBar changeViewState={changeViewState} viewState={viewState} navBarData={navBarData} setCourseData={setCourseData}/>
 
 
        

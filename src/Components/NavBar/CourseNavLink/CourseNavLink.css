@@ -1,0 +1,39 @@
+.course-nav-link {
+  height: 300px;
+  transition: 0.3s;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.course-nav-link-hidden {
+  height: 35px;
+  margin-top: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.course-section-header {
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.drop-down-button {
+  display: inline-block;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.nav-sub-section {
+  margin-left: 15px;
+  margin-top: 12px;
+  font-family: "Open Sans";
+  color: #2f3640;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.nav-sub-section:hover {
+  color: #3742fa;
+  cursor: pointer;
+}
