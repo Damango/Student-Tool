@@ -6,6 +6,7 @@ import SuggestedCourses from "../SuggestedCourses/SuggestedCourses"
 import PracticeBoard from "../PracticeBoard/PracticeBoard"
 import Courses from "../Courses/Courses"
 import CourseView from "../CourseView/CourseView"
+import NavBar from "../NavBar/NavBar"
 import "./StudentTool.css"
 const StudentTool = (props) => {
 
@@ -14,6 +15,7 @@ const StudentTool = (props) => {
     const [recentCourses, setRecentCourses] = useState([])
     const [studentLevel, setStudentLevel] = useState(0)
     const [courseData, setCourseData] = useState()
+    const [navBarData, setNavBarData] = useState()
 
 
 
@@ -43,6 +45,9 @@ const StudentTool = (props) => {
         setViewState(5)
 
     }
+
+
+
 
     function changeViewState(stateView){
         setViewState(stateView)
@@ -89,21 +94,10 @@ const StudentTool = (props) => {
 
     return (<div className="student-tool-container">
 
+            <NavBar changeViewState={changeViewState}/>
 
 
-
-        <div className="side-bar-container">
-            <div className="side-bar-inner-container">
-                <div className="logo-container">LOGO</div>
-                <div className="nav-container">
-                    <div className="nav-link" onClick={() => {changeViewState(0)}}>Dashboard</div>
-                    <div className="nav-link" onClick={() => {changeViewState(1)}}>Courses</div>
-                    <div className="nav-link" onClick={() => {changeViewState(2)}}>Practice Problems</div>
-                    <div className="nav-link">Articles</div>
-                    <div className="nav-link">Discussions</div>
-                </div>
-            </div>
-        </div>
+       
         <div className="main-view-container">
             <div className="main-view-header">
 
